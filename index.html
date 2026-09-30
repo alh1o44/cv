@@ -37,7 +37,7 @@
       "jobTitle": ["Cybersecurity Engineer Saudi Arabia", "Full-Stack Developer KSA", "SEO Specialist Gulf", "مهندس أمن سيبراني", "مطور مواقع متكامل", "خبير تحسين محركات البحث", "مبرمج السعودية"],
       "description": "مبرمج في السعودية ومبرمج السعودية — خبير أمن سيبراني السعودية، مطور متاجر سلة السعودية، تصميم مواقع الرياض وجدة، مطور Next.js السعودية و SEO Specialist Gulf.",
       "knowsAbout": ["Cybersecurity", "Penetration Testing", "Network Security", "CCNA", "Next.js", "Salla E-Commerce", "SEO", "Python", "Digital Marketing", "Artificial Intelligence"],
-      "email": "mailto:alixhdh56@gmail.com",
+      "email": "alixhdh56@gmail.com",
       "telephone": "+967-784-988-440",
       "image": "./imeg/logo.png",
       "address": {"@type": "PostalAddress", "addressLocality": "Riyadh", "addressCountry": "SA"},
@@ -884,6 +884,11 @@ html[data-theme="light"] .partner-card{background:rgba(255,255,255,.72);border-c
 .contact-item.wa .ic svg{fill:var(--green)}
 .contact-item.wa:hover{border-color:rgba(0,255,136,.5)}
 .wa-arrow{width:17px;height:17px;color:var(--green);flex:none}
+/* Email tile = direct mailto link: cyan arrow, no copy step */
+.contact-item.mail:hover{border-color:rgba(0,210,255,.55)}
+.wa-arrow.mail-arrow{color:var(--cyan)}
+html[data-theme="light"] .wa-arrow{color:var(--green-ink)}
+html[data-theme="light"] .wa-arrow.mail-arrow{color:var(--cyan-ink)}
 .copy-btn{
   width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none;
   background:rgba(0,210,255,.14);border:1px solid rgba(0,210,255,.35);
@@ -1228,6 +1233,35 @@ body, nav, footer, .stat-card, .cert-node, .cert-card, .skill-cat, .contact-item
   </div>
 </section>
 
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certs">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-tag" data-i18n="tagCerts">خزنة الشهادات</span>
+      <h2 class="sec-title"><span data-i18n="titleCerts1">مؤهلات موثّقة،</span> <span class="grad" data-i18n="titleCerts2">خبرة مثبتة</span></h2>
+      <p class="sec-sub" data-i18n="subCerts">خط ألياف بصرية نيوني يربط شهاداتي — على الشاشات الكبيرة تتفرّع البطاقات يميناً ويساراً، وعلى الجوال تنساب عمودياً بلا أي تمرير أفقي.</p>
+    </div>
+    <div class="filter-tabs reveal" id="filterTabs">
+      <button class="filter-tab active" data-filter="all" data-i18n="fAll">الكل</button>
+      <button class="filter-tab" data-filter="security" data-i18n="fSec">الأمن والشبكات</button>
+      <button class="filter-tab" data-filter="web" data-i18n="fWeb">الويب والذكاء الاصطناعي</button>
+      <button class="filter-tab" data-filter="marketing" data-i18n="fMkt">جوجل والتسويق</button>
+    </div>
+    <div class="certs-grid" id="certsGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <span class="sec-tag" data-i18n="tagSkills">ترسانة التقنيات</span>
+      <h2 class="sec-title"><span data-i18n="titleSkills1">أدوات أتقنها</span> <span class="grad" data-i18n="titleSkills2">من الكود إلى النمو</span></h2>
+    </div>
+    <div class="skills-wrap" id="skillsWrap"></div>
+  </div>
+</section>
+
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
   <div class="container">
@@ -1288,35 +1322,6 @@ body, nav, footer, .stat-card, .cert-node, .cert-card, .skill-cat, .contact-item
   </div>
 </section>
 
-<!-- ================= CERTIFICATIONS ================= -->
-<section id="certs">
-  <div class="container">
-    <div class="reveal">
-      <span class="sec-tag" data-i18n="tagCerts">خزنة الشهادات</span>
-      <h2 class="sec-title"><span data-i18n="titleCerts1">مؤهلات موثّقة،</span> <span class="grad" data-i18n="titleCerts2">خبرة مثبتة</span></h2>
-      <p class="sec-sub" data-i18n="subCerts">خط ألياف بصرية نيوني يربط شهاداتي — على الشاشات الكبيرة تتفرّع البطاقات يميناً ويساراً، وعلى الجوال تنساب عمودياً بلا أي تمرير أفقي.</p>
-    </div>
-    <div class="filter-tabs reveal" id="filterTabs">
-      <button class="filter-tab active" data-filter="all" data-i18n="fAll">الكل</button>
-      <button class="filter-tab" data-filter="security" data-i18n="fSec">الأمن والشبكات</button>
-      <button class="filter-tab" data-filter="web" data-i18n="fWeb">الويب والذكاء الاصطناعي</button>
-      <button class="filter-tab" data-filter="marketing" data-i18n="fMkt">جوجل والتسويق</button>
-    </div>
-    <div class="certs-grid" id="certsGrid"></div>
-  </div>
-</section>
-
-<!-- ================= SKILLS ================= -->
-<section id="skills">
-  <div class="container">
-    <div class="reveal">
-      <span class="sec-tag" data-i18n="tagSkills">ترسانة التقنيات</span>
-      <h2 class="sec-title"><span data-i18n="titleSkills1">أدوات أتقنها</span> <span class="grad" data-i18n="titleSkills2">من الكود إلى النمو</span></h2>
-    </div>
-    <div class="skills-wrap" id="skillsWrap"></div>
-  </div>
-</section>
-
 <!-- ================= PARTNERS & CLIENTS SHOWCASE ================= -->
 <section id="clients">
   <div class="container">
@@ -1338,21 +1343,19 @@ body, nav, footer, .stat-card, .cert-node, .cert-card, .skill-cat, .contact-item
     <div class="reveal" style="text-align:center">
       <span class="sec-tag" data-i18n="tagContact">لنعمل معاً</span>
       <h2 class="sec-title"><span data-i18n="titleContact1">جاهز نبني مشروعك</span> <span class="grad" data-i18n="titleContact2">القادم؟</span></h2>
-      <p class="sec-sub" style="margin:0 auto" data-i18n="subContact">تواصل معي مباشرة — اضغط زر النسخ بجانب البريد أو تواصل معي واتساب فوراً.</p>
+      <p class="sec-sub" style="margin:0 auto" data-i18n="subContact">تواصل معي مباشرة — اضغط على واتساب أو البريد ويوصلني رسالتك فوراً، بدون أي خطوة نسخ.</p>
     </div>
     <div class="contact-card reveal">
       <div class="contact-row">
-        <div class="contact-item">
-          <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 .5v.01L12 13l8-6.5V6l-8 6.5L4 6.5z"/></svg></div>
-          <div class="txt"><small data-i18n="lblEmail">البريد الإلكتروني</small><strong>alixhdh56@gmail.com</strong></div>
-          <button class="copy-btn" data-copy="alixhdh56@gmail.com" aria-label="copy email">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          </button>
-        </div>
         <a class="contact-item wa" href="https://wa.me/967784988440?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85%D9%87%D9%86%D8%AF%D8%B3%20%D8%B9%D9%84%D9%8A" target="_blank" rel="noopener">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.34m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.83 9.83 0 0 1 9.88 9.89c0 5.45-4.43 9.88-9.88 9.88m8.42-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.44h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></svg></div>
           <div class="txt"><small data-i18n="lblPhone">واتساب مباشر</small><strong>+967 784 988 440</strong></div>
           <svg class="wa-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a class="contact-item mail" href="mailto:alixhdh56@gmail.com?subject=%D8%B1%D8%B3%D8%A7%D0%BB%D8%A9%20%D9%85%D9%86%20%D9%85%D9%88%D9%82%D8%B9%20%D8%A7%D9%84%D8%A3%D8%B9%D9%85%D8%A7%D9%84" target="_blank" rel="noopener">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6zm2 .5v.01L12 13l8-6.5V6l-8 6.5L4 6.5z"/></svg></div>
+          <div class="txt"><small data-i18n="lblEmail">البريد الإلكتروني</small><strong>alixhdh56@gmail.com</strong></div>
+          <svg class="wa-arrow mail-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
         <a class="contact-item" href="https://www.linkedin.com/in/ali-abdulrahman-al-habishi-143b22344" target="_blank" rel="noopener">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></div>
@@ -1472,7 +1475,7 @@ const I18N = {
     clientsTitle:'منحنا ثقتهم أكثر من <span class="grad">50 علامة تجارية</span> في السعودية والوطن العربي',
     featP1:"فيلفيت فورت", featP2:"أورا كير",
     tagContact:"لنعمل معاً", titleContact1:"جاهز نبني مشروعك", titleContact2:"القادم؟",
-    subContact:"تواصل معي مباشرة — اضغط زر النسخ بجانب البريد أو تواصل معي واتساب فوراً.",
+    subContact:"تواصل معي مباشرة — اضغط على واتساب أو البريد ويوصلني رسالتك فوراً، بدون أي خطوة نسخ.",
     lblEmail:"البريد الإلكتروني", lblPhone:"واتساب مباشر",
     copiedEmail:"تم نسخ البريد الإلكتروني",
     footer1:"© 2026 علي عبدالرحمن الحبيشي — جميع الحقوق محفوظة",
@@ -1510,7 +1513,7 @@ const I18N = {
     tagClients:"Success Partners", titleClients1:"Trusted by", titleClients2:"real brands",
     clientsTitle:'Trusted by <span class="grad">50+ brands</span> in Saudi Arabia and the Arab world',
     tagContact:"Let's work together", titleContact1:"Ready to build your", titleContact2:"next project?",
-    subContact:"Reach out directly — copy the email or start a WhatsApp chat instantly.",
+    subContact:"Reach out directly — tap WhatsApp or the email link and your message reaches me instantly, no copying needed.",
     lblEmail:"Email", lblPhone:"WhatsApp Direct",
     copiedEmail:"Email copied to clipboard",
     footer1:"© 2026 Ali Abdulrahman Al-Habishi — All rights reserved",
