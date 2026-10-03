@@ -237,9 +237,12 @@ nav{
   transition:box-shadow .4s, background-color .4s ease, border-color .4s ease;
 }
 nav.scrolled{box-shadow:0 8px 40px rgba(0,0,0,.5)}
-.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.1rem}
+.logo{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.1rem;min-width:0;white-space:nowrap}
+/* safety net: if a font renders wider than measured, the brand clips with an ellipsis
+   instead of wrapping onto the language toggle (the media queries below hide it first) */
+.logo > span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .nav-logo-img{
-  width:44px;height:44px;border-radius:13px;object-fit:cover;
+  width:44px;height:44px;border-radius:13px;object-fit:cover;flex:none;
   border:1px solid rgba(0,210,255,.45);
   box-shadow:0 0 14px rgba(0,210,255,.35),0 0 4px rgba(0,210,255,.55);
   transition:transform .35s, box-shadow .35s;
@@ -255,7 +258,7 @@ nav.scrolled{box-shadow:0 8px 40px rgba(0,0,0,.5)}
   color:var(--muted);transition:.3s;position:relative;
 }
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--glass)}
-.nav-right{display:flex;align-items:center;gap:12px}
+.nav-right{display:flex;align-items:center;gap:12px;flex:none}
 
 /* Language Toggle */
 .lang-toggle{
@@ -468,7 +471,8 @@ html[data-theme="light"] #typed{text-shadow:0 0 20px rgba(0,210,255,.3)}
 }
 html[dir="rtl"] .profile-float{animation-name:floatYr}
 .profile-float.f1{top:26px;inset-inline-start:-34px;color:var(--cyan)}
-.profile-float.f2{bottom:88px;inset-inline-end:-30px;color:var(--green);animation-delay:-2.5s}
+/* f2 مرفوعة فوق لوحة الاسم (ارتفاعها 136px) حتى ما تغطي على "علي عبدالرحمن الحبيشي" */
+.profile-float.f2{bottom:158px;inset-inline-end:-30px;color:var(--green);animation-delay:-2.5s}
 @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @keyframes floatYr{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 .profile-float .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(0,210,255,.12)}
@@ -1093,6 +1097,19 @@ body, nav, footer, .stat-card, .cert-node, .cert-card, .skill-cat, .contact-item
   .partner-card.lg{width:122px;height:122px;padding:12px;border-radius:18px}
   .partner-name{font-size:.74rem}
   .modal-meta{grid-template-columns:1fr}
+}
+/* NAV BRAND — the name must never wrap onto the language toggle when the window shrinks.
+   Measured single-line widths: mark 44 + gap 12, AR name 103 / EN name 111, "/.SEC" ~46,
+   nav-right (lang 138 + theme 44 + burger 40 + gaps) = 246, nav padding 18 each side.
+   Worst case (English): full brand needs 511px, name-only needs 449px, mark only needs 326px.
+   → drop "/.SEC" at ≤640px, drop the name at ≤480px. */
+@media(max-width:640px){
+  .logo > span em{display:none}
+}
+@media(max-width:480px){
+  .logo > span{display:none}
+  .nav-right{gap:9px}
+  .lang-toggle{padding:5px 8px}
 }
 @media (hover:none){
   /* touch feedback */
