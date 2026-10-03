@@ -1,6 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://alh1o44.github.io/cv/:splat",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
