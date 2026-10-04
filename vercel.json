@@ -2,11 +2,10 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://alh1o44.github.io/cv/:splat",
-      "permanent": true
-    }
+    { "source": "/", "destination": "https://alh1o44.github.io/cv/", "permanent": true },
+    { "source": "/index.html", "destination": "https://alh1o44.github.io/cv/", "permanent": true },
+    { "source": "/sitemap.xml", "destination": "https://alh1o44.github.io/cv/sitemap.xml", "permanent": true },
+    { "source": "/robots.txt", "destination": "https://alh1o44.github.io/cv/robots.txt", "permanent": true }
   ],
   "headers": [
     {
